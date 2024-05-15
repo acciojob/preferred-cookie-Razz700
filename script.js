@@ -15,10 +15,10 @@ document.cookie=`fontcolor=${inputcolor.value}`;
             });
            
             arr.forEach((item,i)=>{
-            if(item[0]==" fontsize"){
+            if(item[0]=="fontsize"){
               b=item[1];
             }
-            else if(item[0]==" fontcolor"){
+            else if(item[0]=="fontcolor"){
               c=item[1];
             }
             });
