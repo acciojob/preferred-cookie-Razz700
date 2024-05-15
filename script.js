@@ -9,11 +9,19 @@ document.cookie=`fontsize=${inputfont.value}px`;
 document.cookie=`fontcolor=${inputcolor.value}`;
         });
         if (document.cookie!=null){
-            let arr=document.cookie.split(";");
-            console.log(arr);
-            arr=arr.map((item)=>{
-return item.split("=")[1];
+            let b,c;
+            let arr=document.cookie.split(";").map((item,i)=>{
+                return [item.split("=")[0],item.split("=")[1]];
             });
-            console.log(arr);
-        document.body.style.cssText=`font-size:${arr[0]}px; color:${arr[1]};`; 
+           
+            arr.forEach((item,i)=>{
+            if(item[0]==" fontsize"){
+              b=item[1];
+            }
+            else if(item[0]==" fontcolor"){
+              c=item[1];
+            }
+            });
+            console.log(b,c);
+        document.body.style.cssText=`font-size:${b}; color:${c};`; 
         }
